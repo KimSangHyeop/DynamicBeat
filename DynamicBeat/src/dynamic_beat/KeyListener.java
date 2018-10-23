@@ -5,7 +5,7 @@ import java.awt.event.KeyEvent;
 
 public class KeyListener extends KeyAdapter {
 	@Override
-	public void keyPressed(KeyEvent e) {  //System.out.println("");//키 입력 인식
+	public void keyPressed(KeyEvent e) { // Key入力認識
 		if(DynamicBeat.game == null) {//現在ゲームが進行しない時ならNoteの認識ができない
 			return;
 		}
