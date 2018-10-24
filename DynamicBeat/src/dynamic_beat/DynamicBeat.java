@@ -66,16 +66,16 @@ public class DynamicBeat extends JFrame {
 	private Music introMusic = new Music("introMusic.mp3", true);
 	private int nowSelected = 0;// 現在選択された曲 を意で、0は一番目の曲を意味
 
-	public static Game game; //全体プログラムに使って사용되는 하나의 변수 , 변수 선언만 한다
+	public static Game game; //全体プログラムに使っている一つの変数
 	
 	public DynamicBeat() {
 		trackList.add(new Track("miraiTitleImage.jpg", "miraiStartImage.png", "miraiGameImage.jpg", "miraiSelect.mp3",
-				"mirai.mp3","mirai - jam project")); // 0번 노래
+				"mirai.mp3","mirai - jam project")); // 0番目の歌
 		trackList.add(new Track("miraiTitleImage.jpg", "emeraldStartImage.jpg", "emeraldGameImage.jpg",
-				"emeraldSwordSelect.mp3", "emeraldSword.mp3", "emeraldSword - Rhapsody of fire")); // 1번 노래
+				"emeraldSwordSelect.mp3", "emeraldSword.mp3", "emeraldSword - Rhapsody of fire")); // 1番目の歌
 		trackList.add(new Track("summerTitleImage.png", "summerStartImage.jpg", "summerGameImage.jpg",
-				"summerSelect.mp3", "summer.mp3", "summer - hisaisi joe")); // 2번 노래 / 곡을 한개 더 추가 해서 곡이 안정적으로 들어 갈 수 있게 초기 화 한다. 
-		//로딩 최소화
+				"summerSelect.mp3", "summer.mp3", "summer - hisaisi joe")); // 2番目の歌
+		
 		setUndecorated(true);// 실행시 기본적으로 존제하는 매뉴바가 보이지 않는다
 		setTitle("Dynamic Beat");
 		setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
@@ -83,15 +83,15 @@ public class DynamicBeat extends JFrame {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
-		setBackground(new Color(0, 0, 0, 0));// 하얀색으로 바뀐다
-		setLayout(null);// 그 위치 그대로 나온다
+		setBackground(new Color(0, 0, 0, 0));// 白色で変える
+		setLayout(null);// 위치 그대로 나온다
 
 		addKeyListener(new KeyListener());
 		
 		introMusic.start(); 
 
-		// 곡들의 리스트를 관리한다. 곡 순서도 관리 가능 하다
-		exitButton.setBounds(1245, 0, 30, 30);// 메뉴바의 가장 오른쪽에 위치하도록 배치
+		// 曲のリストを管理する. 曲の順番も管理できる。
+		exitButton.setBounds(1245, 0, 30, 30);// MenuBarの右に配置
 		exitButton.setBorderPainted(false);
 		exitButton.setContentAreaFilled(false);
 		exitButton.setFocusPainted(false);
@@ -125,7 +125,7 @@ public class DynamicBeat extends JFrame {
 
 		add(exitButton);
 
-		startButton.setBounds(40, 200, 400, 100);// 위치 배치 배치
+		startButton.setBounds(40, 200, 400, 100);// 位置配置
 		startButton.setBorderPainted(false);
 		startButton.setContentAreaFilled(false);
 		startButton.setFocusPainted(false);
@@ -133,7 +133,7 @@ public class DynamicBeat extends JFrame {
 			@Override
 			public void mouseEntered(MouseEvent e) { // 마우스가 올라갔을 시 변경
 				startButton.setIcon(startButtonEnteredImage);
-				startButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// 마우스 모양 이 손 모양으로 바뀐다
+				startButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// MousePointの様子が手の様子に変える
 				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// false는 한번만 실행 되도록 한다
 				buttonEnteredMusic.start();
 			}
@@ -431,12 +431,12 @@ public class DynamicBeat extends JFrame {
 		easyButton.setVisible(false);
 		hardButton.setVisible(false);
 		background = new ImageIcon(Main.class.getResource("../images/" + trackList.get(nowSelected).getGameImage()))
-				.getImage();// mainground 등장
+				.getImage();
 		backButton.setVisible(true);
-		// 현제 선택된 게임 이미지 불러오기
+		// 今、選択されたゲームのイメージを呼び込む
 		isGameScreen = true;
 		game  = new Game(trackList.get(nowSelected).getTitleName(),difficulty, trackList.get(nowSelected).getGameMusic());//곡 제목을 가지고 올 수 있게 한다.
-	    game.start();//run 함수가 실행이 된다
+	    game.start();//run関数が実行
 	    setFocusable(true);
 	}
 	public void backMain() {
@@ -455,11 +455,11 @@ public class DynamicBeat extends JFrame {
 	}
 	public void enterMain() {
 		selectTrack(0);
-		startButton.setVisible(false);// 눌렀을 시 스타트 버튼 사라짐
-		quitButton.setVisible(false);// 나가기 버튼 사라짐
+		startButton.setVisible(false);// 押す時StartButtonを消す
+		quitButton.setVisible(false);// ExitButtonを消す
 		leftButton.setVisible(true);
 		rightButton.setVisible(true);
-		easyButton.setVisible(true); // 메인 화면으로 넘어왔을시 보여진다.
+		easyButton.setVisible(true); 
 		hardButton.setVisible(true);
 		background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();// mainground																											// 등장
 		isMainScreen = true;
