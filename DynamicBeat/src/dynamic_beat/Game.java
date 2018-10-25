@@ -79,9 +79,9 @@ public class Game extends Thread {// ゲーム内のNote管理
 			note.screenDraw(g);
 		} // Note.JavaにあるNoteを読み込む
 		g.setColor(Color.white);
-		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);// 글씨 깨짐 방지
+		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);// 文字化けを防止
 		g.setFont(new Font("Arial", Font.BOLD, 30));
-		g.drawString(titleName, 20, 702);// 글씨가 나오게 한다.
+		g.drawString(titleName, 20, 702);// TitleNameをみせる.
 		g.drawString(difficulty, 1190, 702);
 		g.setFont(new Font("Arial", Font.PLAIN, 26));
 		g.setColor(Color.DARK_GRAY);
@@ -169,7 +169,7 @@ public class Game extends Thread {// ゲーム内のNote管理
 	public void pressK() {
 		judge("K");
 		noteRouteKImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
-		new Music("DrumSmall1.mp3", false).start(); // 한번 반복을 위해 false 값을 넣는다
+		new Music("DrumSmall1.mp3", false).start(); // 音を一度だけ出るためfalseを入れる
 	}
 
 	public void releaseK() {
@@ -179,7 +179,7 @@ public class Game extends Thread {// ゲーム内のNote管理
 	public void pressL() {
 		judge("L");
 		noteRouteLImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
-		new Music("DrumSmall1.mp3", false).start(); // 한번 반복을 위해 false 값을 넣는다
+		new Music("DrumSmall1.mp3", false).start(); // 音を一度だけ出るためfalseを入れる
 	}
 
 	public void releaseL() {
