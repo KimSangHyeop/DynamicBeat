@@ -76,7 +76,7 @@ public class DynamicBeat extends JFrame {
 		trackList.add(new Track("summerTitleImage.png", "summerStartImage.jpg", "summerGameImage.jpg",
 				"summerSelect.mp3", "summer.mp3", "summer - hisaisi joe")); // 2番目の歌
 		
-		setUndecorated(true);// 실행시 기본적으로 존제하는 매뉴바가 보이지 않는다
+		setUndecorated(true);
 		setTitle("Dynamic Beat");
 		setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
 		setResizable(false);
@@ -84,7 +84,7 @@ public class DynamicBeat extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		setBackground(new Color(0, 0, 0, 0));// 白色で変える
-		setLayout(null);// 위치 그대로 나온다
+		setLayout(null);
 
 		addKeyListener(new KeyListener());
 		
@@ -97,10 +97,10 @@ public class DynamicBeat extends JFrame {
 		exitButton.setFocusPainted(false);
 		exitButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e) { // 마우스가 올라갔을 시 변경
+			public void mouseEntered(MouseEvent e) { //  Mouseが上がる時、様子変更
 				exitButton.setIcon(exitButtonEnteredImage);
-				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// 마우스 모양 이 손 모양으로 바뀐다
-				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// Mouseの様子が手の様子に変更する
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 			}
 
@@ -112,14 +112,14 @@ public class DynamicBeat extends JFrame {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 				try {
 					Thread.sleep(1000);
 				} catch (InterruptedException ex) {
 					ex.printStackTrace();
 				}
-				System.exit(0); // Press 시 게임 종료
+				System.exit(0); // 押す時、ゲーム終了
 			}
 		});
 
@@ -131,10 +131,10 @@ public class DynamicBeat extends JFrame {
 		startButton.setFocusPainted(false);
 		startButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e) { // 마우스가 올라갔을 시 변경
+			public void mouseEntered(MouseEvent e) { //  Mouseが上がる時、様子変更
 				startButton.setIcon(startButtonEnteredImage);
 				startButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// MousePointの様子が手の様子に変える
-				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 			}
 
@@ -146,7 +146,7 @@ public class DynamicBeat extends JFrame {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 				enterMain();
 	
@@ -155,16 +155,16 @@ public class DynamicBeat extends JFrame {
 
 		add(startButton);
 
-		quitButton.setBounds(40, 330, 400, 100);// 위치 배치
+		quitButton.setBounds(40, 330, 400, 100);// 位置配置
 		quitButton.setBorderPainted(false);
 		quitButton.setContentAreaFilled(false);
 		quitButton.setFocusPainted(false);
 		quitButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e) { // 마우스가 올라갔을 시 변경
+			public void mouseEntered(MouseEvent e) { // Mouseが上がる時、様子変更
 				quitButton.setIcon(quitButtonEnteredImage);
-				quitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// 마우스 모양 이 손 모양으로 바뀐다
-				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				quitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));//Mouseの様子が手の様子に変更する
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 			}
 
@@ -176,30 +176,30 @@ public class DynamicBeat extends JFrame {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 				try {
-					Thread.sleep(1000);// 1초 후 종료
+					Thread.sleep(1000);// 1秒後終了
 				} catch (InterruptedException ex) {
 					ex.printStackTrace();
 				}
-				System.exit(0); // Press 시 게임 종료
+				System.exit(0); // 押す時ゲーム終了
 			}
 		});
 
 		add(exitButton);
 
 		leftButton.setVisible(false);
-		leftButton.setBounds(140, 310, 60, 60);// 위치 배치
+		leftButton.setBounds(140, 310, 60, 60);// 位置配置
 		leftButton.setBorderPainted(false);
 		leftButton.setContentAreaFilled(false);
 		leftButton.setFocusPainted(false);
 		leftButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e) { // 마우스가 올라갔을 시 변경
+			public void mouseEntered(MouseEvent e) { // Mouseが上がる時、様子変更
 				leftButton.setIcon(leftButtonEnteredImage);
-				leftButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// 마우스 모양 이 손 모양으로 바뀐다
-				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				leftButton.setCursor(new Cursor(Cursor.HAND_CURSOR));//Mouseの様子が手の様子に変更する
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 			}
 
@@ -211,26 +211,26 @@ public class DynamicBeat extends JFrame {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 				selectLeft();
-				// 왼쪽 버튼 이벤트
+				// 左ButtonEvent
 			}
 		});
 
 		add(leftButton);
 
 		rightButton.setVisible(false);
-		rightButton.setBounds(1080, 310, 60, 60);// 위치 배치
+		rightButton.setBounds(1080, 310, 60, 60);// 位置配置
 		rightButton.setBorderPainted(false);
 		rightButton.setContentAreaFilled(false);
 		rightButton.setFocusPainted(false);
 		rightButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e) { // 마우스가 올라갔을 시 변경
+			public void mouseEntered(MouseEvent e) { // Mouseが上がる時、様子変更
 				rightButton.setIcon(rightButtonEnteredImage);
-				rightButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// 마우스 모양 이 손 모양으로 바뀐다
-				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				rightButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// Mouseの様子が手の様子に変更する
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);//falseは一度だけ実行
 				buttonEnteredMusic.start();
 			}
 
@@ -242,26 +242,26 @@ public class DynamicBeat extends JFrame {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 				selectRight();
-				// 오른쪽 버튼 이벤트
+				// 右のButtonEvent
 			}
 		});
 
 		add(rightButton);
 
 		easyButton.setVisible(false);
-		easyButton.setBounds(375, 580, 250, 67);// 위치 배치
+		easyButton.setBounds(375, 580, 250, 67);// 位置配置
 		easyButton.setBorderPainted(false);
 		easyButton.setContentAreaFilled(false);
 		easyButton.setFocusPainted(false);
 		easyButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e) { // 마우스가 올라갔을 시 변경
+			public void mouseEntered(MouseEvent e) { // Mouseが上がる時、様子変更
 				easyButton.setIcon(easyButtonEnteredImage);
-				easyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// 마우스 모양 이 손 모양으로 바뀐다
-				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				easyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// Mouseの様子が手の様子に変更する
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 			}
 
@@ -273,10 +273,10 @@ public class DynamicBeat extends JFrame {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 				gameStart(nowSelected, "Easy");
-				// 난이도 쉬움 이벤트
+				// 難易度EasyEvent
 			}
 		});
 
@@ -289,10 +289,10 @@ public class DynamicBeat extends JFrame {
 		hardButton.setFocusPainted(false);
 		hardButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e) { // 마우스가 올라갔을 시 변경
+			public void mouseEntered(MouseEvent e) { //  Mouseが上がる時、様子変更
 				hardButton.setIcon(hardButtonEnteredImage);
-				hardButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// 마우스 모양 이 손 모양으로 바뀐다
-				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				hardButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// Mouseの様子が手の様子に変更する
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 			}
 
@@ -304,10 +304,10 @@ public class DynamicBeat extends JFrame {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// falseは一度だけ試行
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
 				gameStart(nowSelected, "Hard");
-				// 난이도 어려움 이벤트
+				// 難易度HardEvent
 			}
 		});
 
@@ -322,8 +322,8 @@ public class DynamicBeat extends JFrame {
 			@Override
 			public void mouseEntered(MouseEvent e) { // MouseがButtonの上にある時、様子が変更
 				backButton.setIcon(backButtonEnteredImage);
-				backButton.setCursor(new Cursor(Cursor.HAND_CURSOR));// 마우스 모양 이 손 모양으로 바뀐다
-				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				backButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);
 				buttonEnteredMusic.start();
 			}
 
@@ -335,9 +335,9 @@ public class DynamicBeat extends JFrame {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// false는 한번만 실행 되도록 한다
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);// falseは一度だけ実行
 				buttonEnteredMusic.start();
-				backMain();//main으로 돌아간다
+				backMain();//Mainで戻る
 			}
 		});
 
@@ -346,7 +346,7 @@ public class DynamicBeat extends JFrame {
 		menuBar.setBounds(0, 0, 1280, 30);
 		menuBar.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mousePressed(MouseEvent e) {// Mouse좌표 추가
+			public void mousePressed(MouseEvent e) {// Mouse座標追加
 				mouseX = e.getX();
 				mouseY = e.getY();
 			}
@@ -355,7 +355,7 @@ public class DynamicBeat extends JFrame {
 
 			@Override
 			public void mouseDragged(MouseEvent e) { //Dragする時現在ゲームの画面の位置を移動させる
-				int x = e.getXOnScreen();// 現在Mouseのxの位置を認識
+				int x = e.getXOnScreen();// 現在MouseのXの位置を認識
 				int y = e.getYOnScreen();
 				setLocation(x - mouseX, y - mouseY);
 			}
@@ -381,14 +381,14 @@ public class DynamicBeat extends JFrame {
 		if(isGameScreen) {
 			game.screenDraw(g);//Game.Javaを認識
 		}
-		paintComponents(g);// 스크린 이미지를 그려주는 것 이외에 JFrame 안에 그려주는 것 항상 고정시키는 이미지를 그린다. 및 추가된 요소들을 보여준다
+		paintComponents(g);// ScreenImageを描く以外にJFrameの中で描く。そして追加された要素を見せる
 		try {
 			Thread.sleep(5);
 		}catch(Exception e) {
 			e.printStackTrace();
 			
 		}
-		this.repaint();// 계속 반복
+		this.repaint();// 継続反復
 
 	}
 
@@ -396,34 +396,34 @@ public class DynamicBeat extends JFrame {
 		if (selectedMusic != null)// ! = not
 			selectedMusic.close();
 		titleImage = new ImageIcon(Main.class.getResource("../images/" + trackList.get(nowSelected).getTitleImage()))
-				.getImage();// 현제 선택된 값의 곡을 넣어주겠다는 의미이다.
+				.getImage();// 現在選択されたことに曲を入れる意味
 		selectedImage = new ImageIcon(Main.class.getResource("../images/" + trackList.get(nowSelected).getStartImage()))
-				.getImage();// 현제 선택된 값의 곡을 넣어주겠다는 의미이다.
-		selectedMusic = new Music(trackList.get(nowSelected).getStartMusic(), true);// 음악 반복
-		selectedMusic.start();// 음악 시작
+				.getImage();
+		selectedMusic = new Music(trackList.get(nowSelected).getStartMusic(), true);//音楽反復
+		selectedMusic.start();// 音楽Start
 
 	}
 
 	public void selectLeft() {
-		if (nowSelected == 0) // 0번째 곡일 때는 오른쪽 곡 선택가능하게 -1를 한다.
+		if (nowSelected == 0) // 0番目の曲の時、右の曲を選択するのができるため-1をする
 			nowSelected = trackList.size() - 1;
 		else
-			nowSelected--; // 아닐시 다시 세팅
+			nowSelected--; 
 		selectTrack(nowSelected);
 
 	}
 
 	public void selectRight() {
-		if (nowSelected == trackList.size() - 1) // 처음으로 이동하도록 만든다.
+		if (nowSelected == trackList.size() - 1) // 先の曲に移動する
 			nowSelected = 0;
 		else
-			nowSelected++; // 아닐시 다시 세팅
+			nowSelected++; 
 		selectTrack(nowSelected);
 
 	}
 
 	public void gameStart(int nowSelected, String difficulty) {
-		if (selectedMusic != null)// 음악이 실행 중일 때
+		if (selectedMusic != null)// 音楽が実行している時
 			selectedMusic.close();
 		isMainScreen = false;
 		leftButton.setVisible(false);
@@ -435,12 +435,12 @@ public class DynamicBeat extends JFrame {
 		backButton.setVisible(true);
 		// 今、選択されたゲームのイメージを呼び込む
 		isGameScreen = true;
-		game  = new Game(trackList.get(nowSelected).getTitleName(),difficulty, trackList.get(nowSelected).getGameMusic());//곡 제목을 가지고 올 수 있게 한다.
+		game  = new Game(trackList.get(nowSelected).getTitleName(),difficulty, trackList.get(nowSelected).getGameMusic());//曲のTitleNameをGame.Javaで持っている
 	    game.start();//run関数が実行
 	    setFocusable(true);
 	}
 	public void backMain() {
-		isMainScreen = true;//다시 메인함수로 돌아온다
+		isMainScreen = true;//MainMethodに戻る
 		leftButton.setVisible(true);
 		rightButton.setVisible(true);
 		easyButton.setVisible(true);
