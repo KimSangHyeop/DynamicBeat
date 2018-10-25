@@ -2,11 +2,11 @@ package dynamic_beat;
 
 public class Track {
   
-	private String titleImage;//제목 부분 이미지
+	private String titleImage;//曲のTitleImage
 	private String startImage;//ゲームの選択Pageイメージ
 	private String gameImage;//該当の曲を実行しイメージ
     private String startMusic;//ゲームの選択し音楽実行
-    private String gameMusic;//該当の曲を 실행했을 때 음악
+    private String gameMusic;//該当の曲を実行する時の音楽
     private String titleName;//曲のタイトル 
     
     
@@ -47,7 +47,7 @@ public class Track {
 		this.titleName = titleName;
 	}
 	public Track(String titleImage, String startImage, String gameImage, String startMusic, String gameMusic, String titleName) {
-		super();//생성자 생성 내부 변수를 초기화 using filed
+		super();//関数を初期化　using filed
 		this.titleImage = titleImage;
 		this.startImage = startImage;
 		this.gameImage = gameImage;
